@@ -1,4 +1,40 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+# # Check Prettier standards
+
+# echo '🏗️👷 Styling and Formatting your project before committing'
+
+# # Format with Prettier standards
+# npm run prettier-fix
+
+# # Style with ESLint standards
+# npm run lint-fix
+
+
+#!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Check Prettier standards
-npm run format
+echo '🏗️👷 Validating code styling and formatting before committing.'
+
+# Format with Prettier standards
+npm run prettier-fix
+
+# Check Prettier formatting
+npm run prettier-check ||
+(
+  echo '🤢Prettier Check Failed. 🤢';
+  false;
+)
+
+# Style with ESLint standards
+npm run lint-fix
+
+# Check ESLint styling
+npm run lint-check ||
+(
+  echo '🤢ESLint Check Failed. 🤢';
+  false;
+)
+
+# Everything OK
+echo '✅ Committing your changes. ✅'
