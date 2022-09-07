@@ -1,6 +1,14 @@
 import React from 'react'
 import './button.scss'
 
+export enum Sizes {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
+}
+
+type Component = (props: ButtonProps) => JSX.Element
+
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -13,7 +21,7 @@ interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large'
+  size?: Sizes.SMALL | Sizes.MEDIUM | Sizes.LARGE
   /**
    * Button contents
    */
@@ -24,10 +32,9 @@ interface ButtonProps {
   onClick?: () => void
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
+export const Button: Component = (props) => {
+  const { primary = false, size = 'medium', backgroundColor, label } = props
+
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
   return (
     <button
