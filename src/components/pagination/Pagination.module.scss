@@ -1,0 +1,24 @@
+.container {
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1.2rem;
+  }
+}
+
+.collapsedRange {
+  border: 0;
+  font-size: 1.3rem;
+  line-height: var(1.6rem);
+  color: #5e58a5;
+  margin: 0 2.4rem;
+
+  &:disabled {
+    background: #fff;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0 1.2rem;
+  }
+}

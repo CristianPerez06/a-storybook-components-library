@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/react-dom": "^18.0.0",
+    "classnames": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -24,7 +25,8 @@
     "prettier-fix": "prettier --write .",
     "lint-check": "eslint --ext ts --ext tsx --ext js --max-warnings 0 .",
     "lint-fix": "eslint --fix",
-    "prepare": "husky install"
+    "husky-prepare": "husky install",
+    "git-reset-changes": "git reset"
   },
   "eslintConfig": {
     "extends": [
