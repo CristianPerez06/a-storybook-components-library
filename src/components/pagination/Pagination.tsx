@@ -1,10 +1,12 @@
 import { useState } from 'react'
 
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 import cn from 'classnames'
 
 import Button, { Types } from './Button'
 import styles from './Pagination.module.scss'
 
+const ICON_SIZE = 10
 const DEFAULT_FIRST_PAGE = 1
 
 interface Settings {
@@ -107,7 +109,7 @@ export const Pagination = (props: PaginationProps) => {
     <div className={cn(styles.container, className)} data-testid="pagination-container">
       <Button
         type={Types.ICON}
-        content={'<'}
+        content={<ChevronLeftIcon height={ICON_SIZE} width={ICON_SIZE} />}
         isDisabled={currentPage === config.initialSettings.firstPage || isDisabled}
         onClick={() => handleClick(currentPage - 1)}
         dataTestId="pagination-previous-button"
@@ -161,7 +163,7 @@ export const Pagination = (props: PaginationProps) => {
       )}
       <Button
         type={Types.ICON}
-        content={'>'}
+        content={<ChevronRightIcon height={ICON_SIZE} width={ICON_SIZE} />}
         isDisabled={currentPage === pageCount || isDisabled}
         onClick={() => handleClick(currentPage + 1)}
         dataTestId="pagination-next-button"

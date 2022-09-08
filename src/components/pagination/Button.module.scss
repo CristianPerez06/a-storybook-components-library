@@ -2,8 +2,8 @@
   min-width: 4rem;
   height: 4rem;
   border-radius: 0.4rem;
-  border-color: #968cff;
-  background-color: #fff;
+  border-color: var(--primary-400);
+  background-color: var(--white);
   margin: 0.4rem;
   cursor: pointer;
 
@@ -20,12 +20,12 @@
 }
 
 .number {
-  border: 0.1rem solid #dddaff;
-  color: #7c72e2;
-  background-color: #fff;
+  border: 0.1rem solid var(--primary-200);
+  color: var(--primary-500);
+  background-color: var(--white);
 
   &:hover {
-    background-color: #f5f4ff;
+    background-color: var(--primary-100);
   }
 
   &:disabled {
@@ -36,17 +36,17 @@
 }
 
 .icon {
-  border: 0.1rem solid #968cff;
-  color: #7c72e2;
-  background-color: #f5f4ff;
+  border: 0.1rem solid var(--primary-400);
+  color: var(--primary-500);
+  background-color: var(--primary-100);
 
   &:hover {
-    background-color: #dddaff;
+    background-color: var(--primary-200);
   }
 
   &:disabled {
-    border-color: #dddaff;
-    background: #f5f4ff;
+    border-color: var(--primary-200);
+    background: var(--primary-100);
     opacity: 0.3;
     cursor: default;
   }
@@ -68,19 +68,19 @@
 
 .selected {
   font-weight: 700;
-  color: #fff;
-  background-color: #968cff;
-  border-color: #5e58a5;
+  color: var(--white);
+  background-color: var(--primary-400);
+  border-color: var(--primary-600);
 
   &:hover {
-    background-color: #968cff;
+    background-color: var(--primary-400);
   }
 
   &:disabled {
-    color: #7c72e2;
-    background: #f5f4ff;
+    color: var(--primary-500);
+    background: var(--primary-100);
     opacity: 0.3;
-    border-color: #968cff;
+    border-color: var(--primary-400);
     cursor: default;
   }
 }
