@@ -1,0 +1,70 @@
+.container {
+  display: inline-flex;
+  justify-content: center;
+  max-width: 100%;
+  height: 4.4rem;
+  margin: 0.1rem;
+  font-size: 1.6rem;
+  line-height: 2re;
+  color: var(--text-primary);
+  background: var(--white);
+  border: 0.1rem solid var(--primary-300);
+  border-radius: 2.4rem;
+
+  &:not(.disabled) {
+    &:focus,
+    &:hover {
+      outline: 0;
+      border: solid 0.2rem var(--primary-300);
+      margin: 0;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.3rem var(--secondary-6);
+    }
+  }
+
+  &.disabled {
+    background-color: var(--primary-100);
+    cursor: default;
+  }
+}
+
+.option {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+  margin: 0.3rem;
+  overflow: hidden;
+
+  cursor: pointer;
+  transition: All 0.2s ease;
+
+  &.disabled {
+    cursor: default;
+    color: var(--primary-300);
+  }
+}
+
+.optionSelected {
+  color: var(--primary-700);
+  background-color: var(--primary-200);
+  border-radius: 2rem;
+
+  &.disabled {
+    background-color: var(--primary-300);
+    color: var(--primary-200);
+  }
+}
+
+.radioButton {
+  display: none;
+}
+
+.text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
