@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useMediaQuery } from '@react-hook/media-query'
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 import cn from 'classnames'
@@ -105,6 +106,8 @@ export const Pagination = (props: PaginationProps) => {
     onChange?.(value)
   }
 
+  const isExtraSmallAndUp = useMediaQuery(`(min-width: 480px)`)
+
   return (
     <div className={cn(styles.container, className)} data-testid="pagination-container">
       <Button
@@ -114,52 +117,56 @@ export const Pagination = (props: PaginationProps) => {
         onClick={() => handleClick(currentPage - 1)}
         dataTestId="pagination-previous-button"
       />
-      {config.showCollapsedFirstRange && (
-        <>
-          <Button
-            content={config.initialSettings.firstPage.toString()}
-            isDisabled={isDisabled}
-            onClick={() => handleClick(config.initialSettings.firstPage)}
-            dataTestId="pagination-first-page-number-button"
-          />
-          <Button
-            type={Types.SEPARATOR}
-            content={'...'}
-            isDisabled={isDisabled}
-            className={styles.collapsedRange}
-            dataTestId="pagination-collapsed-range"
-          />
-        </>
-      )}
-      {config.pageNumbers.map((pageNumber) => (
-        <Button
-          key={`page_` + pageNumber}
-          content={pageNumber.toString()}
-          isDisabled={isDisabled}
-          isSelected={currentPage === pageNumber}
-          onClick={() => {
-            if (currentPage === pageNumber) return
-            handleClick(pageNumber)
-          }}
-          dataTestId={'pagination-page-number-button'}
-        />
-      ))}
-      {config.showCollapsedLastRange && (
-        <>
-          <Button
-            type={Types.SEPARATOR}
-            content={'...'}
-            isDisabled={isDisabled}
-            className={styles.collapsedRange}
-            dataTestId="pagination-collapsed-range"
-          />
-          <Button
-            content={pageCount.toString()}
-            isDisabled={isDisabled}
-            onClick={() => handleClick(pageCount)}
-            dataTestId="pagination-last-page-number-button"
-          />
-        </>
+      {isExtraSmallAndUp && (
+        <div className={styles.desktopButtons}>
+          {config.showCollapsedFirstRange && (
+            <>
+              <Button
+                content={config.initialSettings.firstPage.toString()}
+                isDisabled={isDisabled}
+                onClick={() => handleClick(config.initialSettings.firstPage)}
+                dataTestId="pagination-first-page-number-button"
+              />
+              <Button
+                type={Types.SEPARATOR}
+                content={'...'}
+                isDisabled={isDisabled}
+                className={styles.collapsedRange}
+                dataTestId="pagination-collapsed-range"
+              />
+            </>
+          )}
+          {config.pageNumbers.map((pageNumber) => (
+            <Button
+              key={`page_` + pageNumber}
+              content={pageNumber.toString()}
+              isDisabled={isDisabled}
+              isSelected={currentPage === pageNumber}
+              onClick={() => {
+                if (currentPage === pageNumber) return
+                handleClick(pageNumber)
+              }}
+              dataTestId={'pagination-page-number-button'}
+            />
+          ))}
+          {config.showCollapsedLastRange && (
+            <>
+              <Button
+                type={Types.SEPARATOR}
+                content={'...'}
+                isDisabled={isDisabled}
+                className={styles.collapsedRange}
+                dataTestId="pagination-collapsed-range"
+              />
+              <Button
+                content={pageCount.toString()}
+                isDisabled={isDisabled}
+                onClick={() => handleClick(pageCount)}
+                dataTestId="pagination-last-page-number-button"
+              />
+            </>
+          )}
+        </div>
       )}
       <Button
         type={Types.ICON}
