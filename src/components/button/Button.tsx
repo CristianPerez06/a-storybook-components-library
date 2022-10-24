@@ -9,7 +9,6 @@ export enum Types {
 }
 
 export interface ButtonProps {
-  type?: Types.PAGE_NUMBER | Types.SEPARATOR | Types.ICON
   content: string
   isDisabled?: boolean
   isSelected?: boolean
@@ -20,11 +19,11 @@ export interface ButtonProps {
 type Button = (props: ButtonProps) => JSX.Element
 
 export const Button = (props: ButtonProps) => {
-  const { type = Types.PAGE_NUMBER, content, isDisabled = false, isSelected = false, onClick, className } = props
+  const { content, isDisabled = false, isSelected = false, onClick, className } = props
 
   return (
     <button
-      className={cn(styles.button, className, isSelected && styles.selected, styles[type])}
+      className={cn(styles.button, className, isSelected && styles.selected)}
       type="button"
       disabled={isDisabled}
       onClick={onClick}

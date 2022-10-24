@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { TextArea } from './TextArea'
+import { TextArea } from '../components/textarea/TextArea'
 
 const Template: ComponentStory<typeof TextArea> = ({ ...args }) => <TextArea {...args}></TextArea>
 

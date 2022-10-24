@@ -5,7 +5,7 @@
 .textArea {
   width: 100%;
   border: solid 0.1rem var(--primary-300);
-  border-radius: 0.8rem;
+  border-radius: 0.3rem;
   padding: 0.8rem;
   margin: 0.1rem;
   font-size: 1.6rem;
@@ -33,13 +33,13 @@
 
       &.success {
         box-shadow: none;
-        border: solid 0.1rem var(--success-400);
+        border: solid 0.1rem var(--success);
         margin: 0.1rem;
       }
 
       &.error {
         box-shadow: none;
-        border: solid 0.1rem var(--error-400);
+        border: solid 0.1rem var(--danger);
         margin: 0.1rem;
       }
     }

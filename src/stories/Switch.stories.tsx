@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Switch } from './Switch'
+import { Switch } from '../components/switch/Switch'
 
 const optionA = { label: 'Option A', value: 'label-a' }
 const optionB = { label: 'Option B', value: 'label-b' }

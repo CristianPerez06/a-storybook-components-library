@@ -9,16 +9,15 @@ export default {
   component: Select,
 } as ComponentMeta<typeof Select>
 
-const SELECTED_OPTION = { value: '2', label: 'Sed vehicula, odio eu vulputate malesuada..' }
+const SELECTED_OPTION = { value: '2', label: 'This one is the second option.' }
 
 const OPTIONS = [
   {
     value: '1',
-    label:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac justo nec leo consectetur tempus ut id purus. Donec eu magna sollicitudin, luctus nunc vel, gravida urna. Sed vehicula, odio eu vulputate malesuada.',
+    label: 'Here you can find the first option.',
   },
   SELECTED_OPTION,
-  { value: '3', label: 'Donec eu magna sollicitudin, luctus nunc vel.' },
+  { value: '3', label: 'Last but not least, you have here the third option.' },
 ]
 
 // Default

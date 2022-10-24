@@ -9,7 +9,7 @@
   color: var(--text-primary);
   background: var(--white);
   border: 0.1rem solid var(--primary-300);
-  border-radius: 2.4rem;
+  border-radius: 0.5rem;
 
   &:not(.disabled) {
     &:focus,
@@ -51,7 +51,7 @@
 .optionSelected {
   color: var(--primary-700);
   background-color: var(--primary-200);
-  border-radius: 2rem;
+  border-radius: 0.5rem;
 
   &.disabled {
     background-color: var(--primary-300);

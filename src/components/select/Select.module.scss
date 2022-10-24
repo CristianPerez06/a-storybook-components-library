@@ -74,7 +74,7 @@
   height: 2rem;
   width: 100%;
   border: solid 0.1rem var(--border-color);
-  border-radius: 0.8rem;
+  border-radius: 0.3rem;
   padding: 0.8rem 4rem 0.8rem 0.8rem;
   margin: 0.1rem;
   line-height: 2rem;
@@ -140,7 +140,7 @@
   margin-top: 0.8rem;
   background: var(--white);
   border: 0.1rem solid var(--primary-600);
-  border-radius: 1.2rem;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 
@@ -168,7 +168,7 @@
 .option {
   padding: 1.2rem 1.6rem;
   margin: 0 0.4rem;
-  border-radius: 0.8rem;
+  border-radius: 0.3rem;
   cursor: pointer;
 
   &:first-child {

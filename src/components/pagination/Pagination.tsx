@@ -115,7 +115,6 @@ export const Pagination = (props: PaginationProps) => {
         content={<ChevronLeftIcon height={ICON_SIZE} width={ICON_SIZE} />}
         isDisabled={currentPage === config.initialSettings.firstPage || isDisabled}
         onClick={() => handleClick(currentPage - 1)}
-        dataTestId="pagination-previous-button"
       />
       {isExtraSmallAndUp && (
         <div className={styles.desktopButtons}>
@@ -125,14 +124,12 @@ export const Pagination = (props: PaginationProps) => {
                 content={config.initialSettings.firstPage.toString()}
                 isDisabled={isDisabled}
                 onClick={() => handleClick(config.initialSettings.firstPage)}
-                dataTestId="pagination-first-page-number-button"
               />
               <Button
                 type={Types.SEPARATOR}
                 content={'...'}
                 isDisabled={isDisabled}
                 className={styles.collapsedRange}
-                dataTestId="pagination-collapsed-range"
               />
             </>
           )}
@@ -146,7 +143,6 @@ export const Pagination = (props: PaginationProps) => {
                 if (currentPage === pageNumber) return
                 handleClick(pageNumber)
               }}
-              dataTestId={'pagination-page-number-button'}
             />
           ))}
           {config.showCollapsedLastRange && (
@@ -156,14 +152,8 @@ export const Pagination = (props: PaginationProps) => {
                 content={'...'}
                 isDisabled={isDisabled}
                 className={styles.collapsedRange}
-                dataTestId="pagination-collapsed-range"
               />
-              <Button
-                content={pageCount.toString()}
-                isDisabled={isDisabled}
-                onClick={() => handleClick(pageCount)}
-                dataTestId="pagination-last-page-number-button"
-              />
+              <Button content={pageCount.toString()} isDisabled={isDisabled} onClick={() => handleClick(pageCount)} />
             </>
           )}
         </div>
@@ -173,7 +163,6 @@ export const Pagination = (props: PaginationProps) => {
         content={<ChevronRightIcon height={ICON_SIZE} width={ICON_SIZE} />}
         isDisabled={currentPage === pageCount || isDisabled}
         onClick={() => handleClick(currentPage + 1)}
-        dataTestId="pagination-next-button"
       />
     </div>
   )
