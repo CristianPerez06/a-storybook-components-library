@@ -29,19 +29,21 @@ type SelectProps = {
   hasError?: boolean
 }
 
-type Select = (props: SelectProps) => JSX.Element
+type Comp = (props: SelectProps) => JSX.Element
 
-export const Select: Select = ({
-  name,
-  options,
-  defaultValue = '',
-  placeholder = 'Select an option',
-  disabled = false,
-  isOptional = false,
-  isFilteringEnabled = false,
-  onChange,
-  hasError = false,
-}) => {
+export const Select: Comp = (props: SelectProps) => {
+  const {
+    name,
+    options,
+    defaultValue = '',
+    placeholder = 'Select an option',
+    disabled = false,
+    isOptional = false,
+    isFilteringEnabled = false,
+    onChange,
+    hasError = false,
+  } = props
+
   const [isOpen, setIsOpen] = useState(false)
   const [inputText, setInputText] = useState(defaultValue)
   const [selectedOption, setSelectedOption] = useState<Option>(EMPTY_OPTION)

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react'
+import { ChangeEvent } from 'react'
 
 import cn from 'classnames'
 
@@ -39,7 +39,9 @@ export interface InputProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Input: FC<InputProps> = (props) => {
+type Comp = (props: InputProps) => JSX.Element
+
+export const Input: Comp = (props: InputProps) => {
   const { name, defaultValue, placeholder, maxLength, isDisabled = false, isSuccess, isError, onChange } = props
 
   return (

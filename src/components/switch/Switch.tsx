@@ -1,4 +1,4 @@
-import { useState, FC } from 'react'
+import { useState } from 'react'
 
 import cn from 'classnames'
 
@@ -29,7 +29,9 @@ export interface SwitchProps {
   onChange?: (value: string) => void
 }
 
-export const Switch: FC<SwitchProps> = (props) => {
+type Comp = (props: SwitchProps) => JSX.Element
+
+export const Switch: Comp = (props: SwitchProps) => {
   const { name, isDisabled = false, options: switchOptions, onChange } = props
 
   const [optionsList, setOptionsList] = useState<SwitchOption[]>(switchOptions)
