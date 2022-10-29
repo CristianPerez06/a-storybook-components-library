@@ -16,9 +16,9 @@ export interface ButtonProps {
   className?: string
 }
 
-type Button = (props: ButtonProps) => JSX.Element
+type Comp = (props: ButtonProps) => JSX.Element
 
-export const Button = (props: ButtonProps) => {
+export const Button: Comp = (props: ButtonProps) => {
   const { content, isDisabled = false, isSelected = false, onClick, className } = props
 
   return (

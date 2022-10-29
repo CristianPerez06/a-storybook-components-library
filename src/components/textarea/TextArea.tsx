@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react'
+import { ChangeEvent } from 'react'
 
 import cn from 'classnames'
 
@@ -47,7 +47,9 @@ export interface TextAreaProps {
   onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-export const TextArea: FC<TextAreaProps> = (props) => {
+type Comp = (props: TextAreaProps) => JSX.Element
+
+export const TextArea: Comp = (props: TextAreaProps) => {
   const {
     name,
     defaultValue,
