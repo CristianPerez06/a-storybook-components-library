@@ -16,30 +16,12 @@
   font-size: 1.6rem;
   --border-color: var(--primary-300);
 
-  &.error {
-    --border-color: var(--danger);
-  }
-
-  &.success {
-    --border-color: var(--success);
-  }
-
   &:enabled {
     &:focus,
     &:hover {
       outline: 0;
       margin: 0;
       border: solid 0.2rem var(--primary-300);
-    }
-
-    &.success {
-      border: solid 0.1rem var(--success);
-      margin: 0 0.1rem;
-    }
-
-    &.error {
-      border: solid 0.1rem var(--danger);
-      margin: 0 0.1rem;
     }
 
     &:focus {
@@ -80,14 +62,6 @@
   line-height: 2rem;
   color: var(--primary-600);
   cursor: text;
-}
-
-.noFiltering {
-  cursor: pointer;
-
-  &:disabled {
-    cursor: default;
-  }
 }
 
 .inputContent {
