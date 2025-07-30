@@ -1,5 +1,6 @@
 # a-components-library
-A components library built with Storybook.
+
+A components library built with Storybook, featuring reusable UI components like buttons, inputs, selects, switches, textareas, and pagination with modern styling and comprehensive documentation.
 
 ## Tech stack
 
@@ -13,14 +14,24 @@ A components library built with Storybook.
 - @react-hook/media-query
 - Prettier, ESlint and Husky
 
-## How to execute the app
+## Getting Started
 
-1. `npm install`
-2. `npm run storybook`
+### Development Server
 
-## Live example
-This example is deployed on [Render](https://render.com/) using a free account. Taking this into account there are a couple of things to keep in mind before using the app:
-- On first use, the App will have to boot, which could take several seconds.
-- Extensive use may affect performance.
+Next step is to install dependencies and run the development server:
 
-Go to [live example](https://a-storybook-components-library.onrender.com/)
+```bash
+To run the application locally:
+
+1. Install dependencies: `npm install`
+3. Start storybook: `npm run storybook`
+```
+
+## Live Demo
+
+A live version of this app is hosted on [Render](https://render.com/) (free tier). Please note:
+
+- The app may take several seconds to start on first use, as the server may be sleeping.
+- Performance may be limited during periods of high usage.
+
+[View the live demo here](https://a-storybook-components-library.onrender.com/)
